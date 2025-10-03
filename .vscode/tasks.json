@@ -2,19 +2,27 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build C++",
+            "label": "Build and Run C++",
             "type": "shell",
             "command": "g++",
             "args": [
+                "-std=c++17",
+                "-Wall",
                 "${file}",
                 "-o",
-                "${workspaceFolder}/a.out"
+                "${fileDirname}/${fileBasenameNoExtension}"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Run C++",
+            "type": "shell",
+            "command": "${fileDirname}/${fileBasenameNoExtension}",
+            "dependsOn": ["Build and Run C++"]
         }
     ]
 }
