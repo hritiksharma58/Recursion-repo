@@ -28,7 +28,7 @@ int main()
 {
     stack<int> st;
     int n;
-    cout << "enter the size of stack";
+    cout << "enter the size of stack :";
     cin >> n;
     for (int i = 0; i < n; i++)
     {
